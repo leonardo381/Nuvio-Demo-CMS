@@ -1,0 +1,4 @@
+
+@import "flowbite";
+@import "tailwindcss";
+@config "../tailwind.config.js";
