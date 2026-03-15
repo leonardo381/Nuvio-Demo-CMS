@@ -5,7 +5,7 @@ import {
 } from '$lib/server/content';
 
 export async function load() {
-  const page = await getPageBySlug('tijjsusm3wnpxlb', 'deviceMockup');
+  const page = await getPageBySlug('tijjsusm3wnpxlb', 'gallery');
 
   const blocks = await getBlocksByPageId(page.id);
 
