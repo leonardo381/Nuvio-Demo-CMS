@@ -1,12 +1,13 @@
 import {
+  getWebsiteBySlug,
   getPageBySlug,
   getBlocksByPageId,
   mapBlocksBySlot
 } from '$lib/server/content';
 
 export async function load() {
-  const page = await getPageBySlug('tijjsusm3wnpxlb', 'gallery');
-
+  const website = await getWebsiteBySlug('demo-site');
+  const page = await getPageBySlug(website.id, 'gallery');
   const blocks = await getBlocksByPageId(page.id);
 
   return {
