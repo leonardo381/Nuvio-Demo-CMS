@@ -5,13 +5,13 @@
   const blocks = data.blocksBySlot ?? {};
 
   const timelineHorizontal =
-    blocks['timeline.timelineHorizontal']?.props ?? { items: [] };
+    blocks['timeline.timelineHorizontal']?.props;
 
   const timelineVertical =
-    blocks['timeline.timelineVertical']?.props ?? { items: [] };
+    blocks['timeline.timelineVertical']?.props;
 
   const timelineDefault =
-    blocks['timeline.timelineDefault']?.props ?? { items: [] };
+    blocks['timeline.timelineDefault']?.props;
 </script>
 
 <Timeline variant="timelineDefault" data={timelineDefault} />

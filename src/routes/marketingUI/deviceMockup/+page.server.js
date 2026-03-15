@@ -1,17 +1,15 @@
-import { pb } from '$lib/pb';
+import {
+  getPageBySlug,
+  getBlocksByPageId,
+  mapBlocksBySlot
+} from '$lib/server/content';
 
-export const load = async () => {
-  try {
-    console.log('PB URL:', import.meta.env.VITE_PB_URL);
+export async function load() {
+  const page = await getPageBySlug('xqqnfpum1khuq0m', 'deviceMockup');
 
-    const blocks = await pb.collection('blocks').getFullList({
-      filter: 'component_key = "deviceMockup"',
-      sort: 'position'
-    });
+  const blocks = await getBlocksByPageId(page.id);
 
-    return { blocks };
-  } catch (error) {
-    console.error('DeviceMockup load error:', error);
-    return { blocks: [] };
-  }
-};
+  return {
+    blocksBySlot: mapBlocksBySlot(blocks)
+  };
+}
