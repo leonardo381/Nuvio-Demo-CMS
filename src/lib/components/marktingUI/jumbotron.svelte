@@ -309,6 +309,7 @@
 {/snippet}
 
 {#snippet jumbotronCards(p)}
+{@const data = p ?? {}}
 <section class={`bg-white dark:bg-gray-900 ${p.sectionClass ?? ""}`}>
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
     <!-- Featured -->

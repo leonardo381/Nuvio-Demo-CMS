@@ -10,6 +10,12 @@
   const galleryFeatured = blocks['gallery.galleryFeatured']?.props;
 </script>
 
-<Gallery variant="galleryDefault" data={galleryDefault} />
-<Gallery variant="galleryMasonry" data={galleryMasonry} />
-<Gallery variant="galleryFeatured" data={galleryFeatured} />
+{#if galleryDefault}
+  <Gallery variant="galleryDefault" data={galleryDefault} />
+{/if}
+{#if galleryMasonry}
+  <Gallery variant="galleryMasonry" data={galleryMasonry} />
+{/if}
+{#if galleryFeatured}
+  <Gallery variant="galleryFeatured" data={galleryFeatured} />
+{/if}

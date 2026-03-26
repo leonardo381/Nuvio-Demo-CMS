@@ -14,11 +14,25 @@
 </script>
 
 <div class="mr-24 ml-24 p-12 flex flex-col space-y-8">
-  <DeviceMockup variant="mockupPhone" data={mockupPhone} />
-  <DeviceMockup variant="mockupPhoneIOS" data={mockupPhoneIOS} />
-  <DeviceMockup variant="mockupPhoneAndroid" data={mockupPhoneAndroid} />
-  <DeviceMockup variant="mockupTablet" data={mockupTablet} />
-  <DeviceMockup variant="mockupLaptop" data={mockupLaptop} />
-  <DeviceMockup variant="mockupDesktop" data={mockupDesktop} />
-  <DeviceMockup variant="mockupWatch" data={mockupWatch} />
+  {#if mockupPhone}
+    <DeviceMockup variant="mockupPhone" data={mockupPhone} />
+  {/if}
+  {#if mockupPhoneIOS}
+    <DeviceMockup variant="mockupPhoneIOS" data={mockupPhoneIOS} />
+  {/if}
+  {#if mockupPhoneAndroid}
+    <DeviceMockup variant="mockupPhoneAndroid" data={mockupPhoneAndroid} />
+  {/if}
+  {#if mockupTablet}
+    <DeviceMockup variant="mockupTablet" data={mockupTablet} />
+  {/if}
+  {#if mockupLaptop}
+    <DeviceMockup variant="mockupLaptop" data={mockupLaptop} />
+  {/if}
+  {#if mockupDesktop}
+    <DeviceMockup variant="mockupDesktop" data={mockupDesktop} />
+  {/if}
+  {#if mockupWatch}
+    <DeviceMockup variant="mockupWatch" data={mockupWatch} />
+  {/if}
 </div>

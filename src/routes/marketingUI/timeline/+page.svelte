@@ -14,6 +14,12 @@
     blocks['timeline.timelineDefault']?.props;
 </script>
 
-<Timeline variant="timelineDefault" data={timelineDefault} />
-<Timeline variant="timelineVertical" data={timelineVertical} />
-<Timeline variant="timelineHorizontal" data={timelineHorizontal} />
+{#if timelineDefault}
+  <Timeline variant="timelineDefault" data={timelineDefault} />
+{/if}
+{#if timelineVertical}
+  <Timeline variant="timelineVertical" data={timelineVertical} />
+{/if}
+{#if timelineHorizontal}
+  <Timeline variant="timelineHorizontal" data={timelineHorizontal} />
+{/if}
