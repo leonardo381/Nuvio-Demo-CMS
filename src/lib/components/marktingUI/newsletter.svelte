@@ -163,7 +163,7 @@
 </div>
 {/snippet}
 
-{#snippet newslettePopup(p)}
+{#snippet newsletterPopup(p)}
 <div
   id="sign-up-pop-up"
   tabindex="-1"
@@ -271,8 +271,8 @@
     {@render newsletterCard(data)}
   {:else if variant === 'newsletterBanner'}
     {@render newsletterBanner(data)}
-  {:else if variant === 'newslettePopup'}
-    {@render newslettePopup(data)}
+  {:else if variant === 'newsletterPopup'}
+    {@render newsletterPopup(data)}
   {:else if variant === 'newsletterModal'}
     {@render newsletterModal(data)}
   {/if}
