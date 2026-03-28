@@ -1,5 +1,5 @@
 <script>
-  import InformationPage from '$lib/components/marktingUI/informationPage.svelte';
+  import InformationPage from '$lib/components/coreUI/informationPage.svelte';
   export let data;
 
   const blocks = data.blocksBySlot ?? {};

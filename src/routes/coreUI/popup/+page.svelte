@@ -1,5 +1,5 @@
 <script>
-  import Popup from '$lib/components/marktingUI/popup.svelte';
+  import Popup from '$lib/components/coreUI/popup.svelte';
   export let data;
 
   const blocks = data.blocksBySlot ?? {};

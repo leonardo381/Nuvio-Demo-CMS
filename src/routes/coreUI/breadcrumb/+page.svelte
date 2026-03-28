@@ -1,5 +1,5 @@
 <script>
-  import Breadcrumb from '$lib/components/marktingUI/breadcrumb.svelte';
+  import Breadcrumb from '$lib/components/coreUI/breadcrumb.svelte';
   export let data;
 
   const blocks = data.blocksBySlot ?? {};

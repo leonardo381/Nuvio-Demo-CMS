@@ -30,12 +30,12 @@
       {
         label: 'Core UI',
         children: [
-          { label: 'Breadcrumb', href: '#' },
-          { label: 'Cookie Consent', href: '#' },
-          { label: 'Footer', href: '#' },
-          { label: 'Information page', href: '#' },
-          { label: 'Navbar', href: '#' },
-          { label: 'Popup', href: '#' }
+          { label: 'Breadcrumb', href: '/coreUI/breadcrumb' },
+          { label: 'Cookie Consent', href: '/coreUI/cookieConsent' },
+          { label: 'Footer', href: '/coreUI/' },
+          { label: 'Information page', href: '/coreUI/informationPage' },
+          { label: 'Navbar', href: '/coreUI/' },
+          { label: 'Popup', href: '/coreUI/popup' }
         ],
       },
       {
