@@ -4,43 +4,40 @@
 </script>
 
 {#snippet breadcrumbDefault(p)}
-<nav class="flex" aria-label={p.ariaLabel ?? "Breadcrumb"}>
-  <ol class={`inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse ${p.listClass ?? ""}`}>
+<nav class="flex" aria-label="Breadcrumb">
+  <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
     {#each p.items ?? [] as item, i}
-      <li aria-current={item.current ? "page" : undefined}>
-        <div class="flex items-center space-x-1.5">
-          {#if i === 0}
-            {#if item.href}
-              <a href={item.href} class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
-                {#if item.iconSvg}
-                  {@html item.iconSvg}
-                {/if}
-                {item.label}
-              </a>
-            {:else}
-              <span class="inline-flex items-center text-sm font-medium text-body-subtle">
-                {#if item.iconSvg}
-                  {@html item.iconSvg}
-                {/if}
-                {item.label}
-              </span>
+      <li aria-current={i === (p.items?.length ?? 1) - 1 ? "page" : undefined}>
+        {#if i === 0}
+          <div class="inline-flex items-center text-sm font-medium text-gray-700 dark:text-gray-400">
+            {#if item.iconSvg}
+              {@html item.iconSvg}
             {/if}
-          {:else}
-            {#if p.separatorIconSvg}
-              {@html p.separatorIconSvg}
-            {/if}
+            {item.label}
+          </div>
+        {:else}
+          <div class="flex items-center">
+            <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
 
-            {#if item.current || !item.href}
-              <span class="inline-flex items-center text-sm font-medium text-body-subtle">
+            {#if i === (p.items?.length ?? 1) - 1}
+              <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
+                {#if item.iconSvg}
+                  {@html item.iconSvg}
+                {/if}
                 {item.label}
               </span>
             {:else}
-              <a href={item.href} class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+              <span class="ms-1 text-sm font-medium text-gray-700 md:ms-2 dark:text-gray-400">
+                {#if item.iconSvg}
+                  {@html item.iconSvg}
+                {/if}
                 {item.label}
-              </a>
+              </span>
             {/if}
-          {/if}
-        </div>
+          </div>
+        {/if}
       </li>
     {/each}
   </ol>
@@ -48,46 +45,40 @@
 {/snippet}
 
 {#snippet breadcrumbSolid(p)}
-<nav
-  class={`flex p-3 bg-neutral-secondary-medium border border-default-medium rounded-base ${p.navClass ?? ""}`}
-  aria-label={p.ariaLabel ?? "Breadcrumb"}
->
-  <ol class={`inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse ${p.listClass ?? ""}`}>
+<nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
+  <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
     {#each p.items ?? [] as item, i}
-      <li aria-current={item.current ? "page" : undefined}>
-        <div class="flex items-center space-x-1.5">
-          {#if i === 0}
-            {#if item.href}
-              <a href={item.href} class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
-                {#if item.iconSvg}
-                  {@html item.iconSvg}
-                {/if}
-                {item.label}
-              </a>
-            {:else}
-              <span class="inline-flex items-center text-sm font-medium text-body-subtle">
-                {#if item.iconSvg}
-                  {@html item.iconSvg}
-                {/if}
-                {item.label}
-              </span>
+      <li aria-current={i === (p.items?.length ?? 1) - 1 ? "page" : undefined}>
+        {#if i === 0}
+          <div class="inline-flex items-center text-sm font-medium text-gray-700 dark:text-gray-400">
+            {#if item.iconSvg}
+              {@html item.iconSvg}
             {/if}
-          {:else}
-            {#if p.separatorIconSvg}
-              {@html p.separatorIconSvg}
-            {/if}
+            {item.label}
+          </div>
+        {:else}
+          <div class="flex items-center">
+            <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
 
-            {#if item.current || !item.href}
-              <span class="inline-flex items-center text-sm font-medium text-body-subtle">
+            {#if i === (p.items?.length ?? 1) - 1}
+              <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
+                {#if item.iconSvg}
+                  {@html item.iconSvg}
+                {/if}
                 {item.label}
               </span>
             {:else}
-              <a href={item.href} class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+              <span class="ms-1 text-sm font-medium text-gray-700 md:ms-2 dark:text-gray-400">
+                {#if item.iconSvg}
+                  {@html item.iconSvg}
+                {/if}
                 {item.label}
-              </a>
+              </span>
             {/if}
-          {/if}
-        </div>
+          </div>
+        {/if}
       </li>
     {/each}
   </ol>

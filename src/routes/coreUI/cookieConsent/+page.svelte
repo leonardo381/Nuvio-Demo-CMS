@@ -1,5 +1,5 @@
 <script>
-  import Cookie from '$lib/components/coreUI/cookie.svelte';
+  import Cookie from '$lib/components/coreUI/cookieConsent.svelte';
   export let data;
 
   const blocks = data.blocksBySlot ?? {};
